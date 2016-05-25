@@ -21,7 +21,7 @@ var lib = require('bower-files')({
 
 var buildProduction = utilities.env.production;
 
-gulp.task('serve', ['build'], function() {
+gulp.task('serve', function() {
   browserSync.init({
     server: {
       baseDir: "./",
