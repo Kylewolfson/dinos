@@ -10,6 +10,7 @@ function setCharAt(str,index,chr) {
 };
 
 var listener = function(dinoText) {
+  var errors = 10;
   $('#letterSubmit').click(function(){
     var guess = $("#letter").val();
     // debugger;
@@ -42,12 +43,10 @@ var listener = function(dinoText) {
 
 $(document).ready(function() {
 
-  var errors;
   $('#gameStart').click(function() {
+    
     $('#letterSubmit').off();
     getDinosaur(listener);
-    errors = 10;
-    $('#errorDiv').text("You can make " + errors + " more errors before you lose.");
 
   });
 });
