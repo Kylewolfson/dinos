@@ -20,12 +20,13 @@ $(document).ready(function() {
   $('#letterSubmit').click(function(){
     var guess = $("#letter").val();
     // debugger;
-    console.log("guess: " + guess);
+    guess = guess.slice(0,1);
+    console.log(guess);
     if (dinoText.toLowerCase().includes(guess)){
       console.log("Success");
       var code = $('#encodedDiv').html();
       for (var i = 0; i < dinoText.length; i++) {
-        if (dinoText[i].toLowerCase() === guess) {
+        if (dinoText[i].toLowerCase() === guess.toLowerCase()) {
           code = setCharAt(code, i, dinoText[i]);
         }
       }
