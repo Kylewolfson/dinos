@@ -3,7 +3,8 @@ var oops = require('./../js/dino-api.js').oops;
 var fillContainer = require('./../js/dino-api.js').fillContainer;
 var encodeName = require('./../js/encodeDino.js').encode;
 var dinosaur;
-// var dinoText = 'lll';
+
+
 
 
 function setCharAt(str,index,chr) {
@@ -12,31 +13,13 @@ function setCharAt(str,index,chr) {
 }
 
 $(document).ready(function() {
-
+  //var dinoText = 'default';
+var errors;
   $('#gameStart').click(function() {
     getDinosaur();
+    errors = 10;
   });
 
-  $('#letterSubmit').click(function(){
-    var guess = $("#letter").val();
-    // debugger;
-    guess = guess.slice(0,1);
-    console.log(guess);
-    if (dinoText.toLowerCase().includes(guess)){
-      console.log("Success");
-      var code = $('#encodedDiv').html();
-      for (var i = 0; i < dinoText.length; i++) {
-        if (dinoText[i].toLowerCase() === guess.toLowerCase()) {
-          code = setCharAt(code, i, dinoText[i]);
-        }
-      }
-      console.log(code);
-      $('#encodedDiv').text(code);
-
-    } else {
-      console.log("failure");
-    }
-    $("#letter").val('');
-  });
-
+  // the click listener for submitting a letter guess has been moved to dino-api.js
+  // pardon our dust
 });
